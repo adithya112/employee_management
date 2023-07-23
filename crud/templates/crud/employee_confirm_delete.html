@@ -1,0 +1,18 @@
+{% extends "crud/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mx-auto p-2 ">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Employee</legend>
+            <p>Are you sure?</p>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Confirm</button>
+            <a href="{% url 'home' %}" class="btn btn-outline-info">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}
